@@ -90,38 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return data;
         }
 
-        function showResults(data) {
-            const totalResponses = data.yes + data.no;
-            const yesPercentage = ((data.yes / totalResponses) * 100).toFixed(1);
-            const noPercentage = ((data.no / totalResponses) * 100).toFixed(1);
-
-            resultsText.textContent = `Yes: ${yesPercentage}% | No: ${noPercentage}%`;
-            pollContainer.style.display = "none"; // Hide poll buttons
-            spinner.style.display = "none"; // Hide spinner
-            resultsContainer.style.display = "block"; // Show results
-            restartLink.style.display = "block"; // Show the Restart Story link
-        }
-
-        function handleVote(option) {
-            yesButton.disabled = true;
-            noButton.disabled = true;
-            console.log("Buttons disabled"); // Debugging
-
-            // Hide "Is such a world possible?"
-            conclusionText.style.display = "none";
-            pollContainer.style.display = "none";
-
-
-            showLoading();
-            updateVote(option)
-                .then((data) => showResults(data))
-                .catch((error) => {
-                    console.error("Error updating vote:", error);
-                    resultsText.textContent = "An error occurred. Please try again.";
-                    spinner.style.display = "none"; // Hide spinner in case of error
-                });
-        }
-
         yesButton.addEventListener("click", () => handleVote("yes"));
         noButton.addEventListener("click", () => handleVote("no"));
 
@@ -138,7 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const yesPercentage = ((data.yes / totalResponses) * 100).toFixed(1);
         const noPercentage = ((data.no / totalResponses) * 100).toFixed(1);
 
-        resultsText.textContent = `Yes: ${yesPercentage}% | No: ${noPercentage}%`;
+        //resultsText.textContent = `Yes: ${yesPercentage}% | No: ${noPercentage}%`;
+        resultsText.innerHTML = '<div class="poll-result-item">Yes<br>${yesPercentage}%</div><div class="poll-result-item">No<br>${noPercentage}%</div>';
         pollContainer.style.display = "none"; // Hide poll buttons
         spinner.style.display = "none"; // Hide spinner
         resultsContainer.style.display = "block"; // Show results
