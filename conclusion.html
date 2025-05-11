@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SOLAR CITIZEN</title>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAkWljZdlbxSPfIFOGgJOnRyporL1-NqTo",
+            authDomain: "capstone-zsk.firebaseapp.com",
+            projectId: "capstone-zsk",
+            storageBucket: "capstone-zsk.firebasestorage.app",
+            messagingSenderId: "870530158269",
+            appId: "1:870530158269:web:2a77c7994e38e2b4fa31d4",
+            measurementId: "G-SHTHDLHYC4"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Initialize Firestore
+        const db = getFirestore(app);
+
+        // Expose to global scope
+        window.firebaseUtils = {
+            db,
+            doc,
+            getDoc,
+            setDoc,
+            updateDoc
+        };
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.min.js"></script>
+
+
+    <link rel="stylesheet" href="solar.css">
+
+</head>
+
+<body>
+
+    <div id="conclusion-container">
+        <h1 id="conclusion-text">Traveler #00, we have a final question for you</h1>
+        <div id="poll-container" style="display: none;">
+            <button id="yes-button">Yes</button>
+            <button id="no-button">No</button>
+        </div>
+        <div id="results-container" style="display: none;">
+
+            <div id="loading-spinner" style="display: none;"></div>
+            <p id="results-text"></p>
+
+
+            <a href="intro.html" id="restart" style="display: none;">Restart Story</a>
+
+        </div>
+    </div>
+
+
+    <script src="conclusion.js"></script>
+
+</body>
+
+</html>

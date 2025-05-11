@@ -1,0 +1,220 @@
+body {
+    background-color: black;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@font-face {
+    font-family: 'Azedo-Bold';
+    src: url('misc/Azedo-Bold.otf');
+}
+
+@font-face {
+    font-family: 'EurostileBold';
+    src: url('misc/EurostileBold.ttf');
+}
+
+
+/* FOR SOLAR MAP */
+.button-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* On top of the canvas */
+}
+
+.map-button {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 6px 12px;
+    color: #003300;
+    font-family: 'Azedo-Bold';
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.map-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Button Styles */
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Azedo-Bold';
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: none;
+}
+
+button:hover {
+    transform: scale(1.15);
+}
+
+/* TITLE SCREEN */
+#start-button {
+    position: fixed;
+    color: #004f24;
+    top: 55%;
+    left: 70%;
+    z-index: 1000;
+    font-size: 30px;
+}
+
+/* Inside the map */
+#conclusion-button {
+    position: fixed;
+    font-family: 'Azedo-Bold';
+    top: 90%;
+    right: 1%;
+    z-index: 1000;
+    padding: 10px 20px;
+    background: none;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #003300;
+    font-size: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#conclusion-button:hover {
+    transform: scale(1.05);
+}
+
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#intro-text-box {
+    color: white;
+    font-family: 'EurostileBold';
+    font-size: 25pt;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#intro-text-box:hover {
+    transform: scale(1.05);
+}
+
+
+/* CONCLUSION STUFF */
+
+h1 {
+    position: absolute;
+    left: 100%;
+    background: none;
+    text-align: center;
+    color: #003366;
+    font-family: 'Azedo-Bold';
+    transition: all 0.3s ease;
+}
+
+h1:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+#conclusion-container {
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    z-index: 10;
+}
+
+#poll-container {
+    display: none;
+    /* Initially hidden */
+    text-align: center;
+    margin-top: 20px;
+    z-index: 10;
+    /* Ensure it appears above other elements */
+}
+
+#poll-container button {
+    font-size: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#poll-container button:hover {
+    background-color: #45a049;
+}
+
+#results-container {
+    font-family: 'EurostileBold';
+    margin-top: 20px;
+}
+
+#restart {
+    color: #003366;
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 35%;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#restart:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+#loading-spinner {
+    display: none;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
