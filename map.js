@@ -35,9 +35,12 @@ function setup() {
 }
 
 function draw() {
-  background(232, 252, 255);
+  //background(232, 252, 255);
+  background(13, 94, 78);
   noStroke();
-  fill(0, 102, 0, 100);
+  //fill(0, 102, 0, 100);
+  fill(178, 255, 102, 255);
+
 
   for (let p of particles) {
     // Optional dynamic offset based on mouse position

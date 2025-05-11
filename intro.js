@@ -65,9 +65,9 @@ function setup() {
 
 function draw() {
 
-    let r = map(mouseX, 0, width, 200, 240);
-    let g = map(mouseY, 0, height, 230, 255);
-    let b = map(mouseX, 0, width, 150, 230);
+    let r = map(mouseX, 0, width, 0, 13);
+    let g = map(mouseY, 0, height, 80, 99);
+    let b = map(mouseX, 0, width, 65, 90);
 
     if (showTitle) {
         background(r, g, b);
@@ -95,6 +95,7 @@ class Particle {
         this.acc = createVector();
         // this.colorShift = random(1000);
         this.wiggleOffset = random(1000);
+        this.dia = random(1, 2.5);
     }
 
     update() {
@@ -121,8 +122,8 @@ class Particle {
     }
 
     showCore() {
-        fill(0, 79, 36);
-        ellipse(this.pos.x, this.pos.y, 1.5);
+        fill(178, 255, 102);
+        ellipse(this.pos.x, this.pos.y, this.dia);
     }
 }
 

@@ -106,8 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const yesPercentage = ((data.yes / totalResponses) * 100).toFixed(1);
         const noPercentage = ((data.no / totalResponses) * 100).toFixed(1);
 
-        //resultsText.textContent = `Yes: ${yesPercentage}% | No: ${noPercentage}%`;
-        resultsText.innerHTML = '<div class="poll-result-item">Yes<br>${yesPercentage}%</div><div class="poll-result-item">No<br>${noPercentage}%</div>';
+        resultsText.innerHTML = `
+        <div class="poll-result-item">
+            <div class="poll-result-label">Yes</div>
+            <div class="poll-result-percentage">${yesPercentage}%</div>
+        </div>
+        <div class="poll-result-item">
+            <div class="poll-result-label">No</div>
+            <div class="poll-result-percentage">${noPercentage}%</div>
+        </div>
+    `;
+
         pollContainer.style.display = "none"; // Hide poll buttons
         spinner.style.display = "none"; // Hide spinner
         resultsContainer.style.display = "block"; // Show results
