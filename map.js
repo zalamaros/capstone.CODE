@@ -35,6 +35,7 @@ function setup() {
 }
 
 function draw() {
+
   //background(232, 252, 255);
   background(13, 94, 78);
   noStroke();
@@ -68,33 +69,19 @@ let textIndex = 0;
 const overlay = document.getElementById("intro-overlay");
 const introText = document.getElementById("intro-text");
 
-/* 
-// Check if the user has already seen the intro
-if (!localStorage.getItem("introSeen")) {
+// Check if the previous page was intro.html using the referrer
+if (document.referrer && document.referrer.includes("intro.html")) {
   introText.textContent = introTexts[textIndex];
 
-  // Add click event to advance text
   overlay.addEventListener("click", () => {
     textIndex++;
     if (textIndex < introTexts.length) {
       introText.textContent = introTexts[textIndex];
     } else {
       overlay.style.display = "none"; // Hide the overlay after the intro
-      // localStorage.setItem("introSeen", "true"); // Mark intro as seen
     }
   });
 } else {
-  overlay.style.display = "none"; // Skip intro if it’s already seen
+  // If not coming from intro.html, hide the intro overlay immediately
+  overlay.style.display = "none";
 }
-*/
-
-// Always show the intro text
-introText.textContent = introTexts[textIndex];
-overlay.addEventListener("click", () => {
-  textIndex++;
-  if (textIndex < introTexts.length) {
-    introText.textContent = introTexts[textIndex];
-  } else {
-    overlay.style.display = "none"; // Hide the overlay after the intro
-  }
-});

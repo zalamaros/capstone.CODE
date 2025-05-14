@@ -49,6 +49,7 @@
             font-size: 24px;
             font-weight: bold;
             transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         #back-button:hover {
@@ -84,11 +85,11 @@
             transform: scale(1.05);
         }
 
-
         /* General for little buttons */
         .tiny-button {
             position: absolute;
             pointer-events: auto;
+            font-family: EurostileBold;
             background: none;
             color: white;
             font-size: 50px;
@@ -145,7 +146,7 @@
             left: 50%;
             width: 17%;
             background-color: rgba(255, 255, 255);
-            color: #B5C69D;
+            color: #003300;
             padding: 5px;
             border-radius: 20px;
             z-index: 1000;
@@ -160,7 +161,7 @@
         .close-text-box {
             font-family: 'EurostileBold';
             background-color: white;
-            color: #B5C69D;
+            color: #003300;
             padding: 5px;
             border: none;
             border-radius: 5px;
@@ -192,45 +193,49 @@
     </div>
 
     <!-- LITTLE STORY BUTTONS IN SCENES-->
-    <div class="location" id="palisadian">
+    <div class="location" id="palisades">
         <div class="button-container">
-            <button class="tiny-button" id="btn-palisadian-1" style="top: 15%; left: 20%;">⊙</button>
-            <button class="tiny-button" id="btn-palisadian-2" style="top: 10%; left: 50%;">⊙</button>
-            <button class="tiny-button" id="btn-palisadian-3" style="top: 20%; left: 60%;">⊙</button>
-            <button class="tiny-button" id="btn-palisadian-4" style="top: 80%; left: 70%;">⊙</button>
-            <button class="tiny-button hold-button" id="hold-palisadian" style="top: 93%; left: 95%;">⤺</button>
+            <button class="tiny-button" id="btn-palisades-1" style="top: 15%; left: 20%;">⊙</button>
+            <button class="tiny-button" id="btn-palisades-2" style="top: 10%; left: 50%;">⊙</button>
+            <button class="tiny-button" id="btn-palisades-3" style="top: 20%; left: 60%;">⊙</button>
+            <button class="tiny-button" id="btn-palisades-4" style="top: 80%; left: 70%;">⊙</button>
+            <button class="tiny-button hold-button" id="hold-palisades"
+                style="top: 95%; left: 85%; font-size: 20px; animation: oscillate 3s infinite ease-in-out;">before
+                the
+                revolution</button>
         </div>
         <div class="text-box-container">
-            <div id="text-box-palisadian-1" class="clickthrough-text-box hidden">
+            <div id="text-box-palisades-1" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>Small communities hold tight knit families and residents that have small personal gardens with
+                    <p>Small communities hold tight knit families and residents that have small personal gardens, with
                         homes that blend into the hills of grass. They are surrounded by fire resistant plants, and have
                         especially effective systems of both ventilation and insulation for their homes to optimize
                         energy usage.</p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
-            <div id="text-box-palisadian-2" class="clickthrough-text-box hidden">
+            <div id="text-box-palisades-2" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>In an energy grid reformatted to be powered by renewable energy, Los Angeles Solar has a
-                        particular persistence of transmission towers to ensure the transport of many different
-                        collection forms of renewable energy across a large city. </p>
+                    <p>In an energy grid reformatted to be reliant by renewable energy, Los Angeles Solar has a
+                        particular persistence of transmission towers to ensure the transport of many different forms of
+                        renewable energy across a large city. </p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
-            <div id="text-box-palisadian-3" class="clickthrough-text-box hidden">
+            <div id="text-box-palisades-3" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
                     <p>With solar panels and other means of generating sustainable energy connected to every home,
-                        people can generate their own electricity needs, and need not rely on faraway sources and
-                        unseeable systems.</p>
+                        people can generate their own electricity needs, and not rely on faraway sources with
+                        invisible systems.</p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
-            <div id="text-box-palisadian-4" class="clickthrough-text-box hidden">
+            <div id="text-box-palisades-4" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>As a community that was born from tragedy, quite experimental, and thus learned through action,
-                        the Palisades community continued to receive support from the rest of LA, and afterwards helped
-                        other communities to make the sustianable transition, and was a landmark occurence of unity
+                    <p>The New palisades was a community born from tragedy, and quite experimental, thus learning
+                        through action.
+                        They continued to receive support from the rest of LA, and afterwards helped
+                        other communities to make the sustainable transition - this was a landmark occurence of unity
                         among citizens. </p>
                     <button class="close-text-box">Close</button>
                 </div>
@@ -238,15 +243,17 @@
         </div>
     </div>
 
-    <div class="location" id="connectoral">
+    <div class="location" id="lax">
         <div class="button-container">
-            <button class="tiny-button" id="btn-connectoral-1" style="top: 15%; left: 40%;">⊙</button>
-            <button class="tiny-button" id="btn-connectoral-2" style="top: 50%; left: 60%;">⊙</button>
-            <button class="tiny-button" id="btn-connectoral-3" style="top: 80%; left: 40%;">⊙</button>
-            <button class="tiny-button hold-button" id="hold-connectoral" style="top: 93%; left: 95%;">⤺</button>
+            <button class="tiny-button" id="btn-lax-1" style="top: 15%; left: 40%;">⊙</button>
+            <button class="tiny-button" id="btn-lax-2" style="top: 50%; left: 60%;">⊙</button>
+            <button class="tiny-button" id="btn-lax-3" style="top: 80%; left: 40%;">⊙</button>
+            <button class="tiny-button hold-button" id="hold-lax"
+                style="top: 93%; left: 85%; font-size: 20px; animation: oscillate 3s infinite ease-in-out;">before the
+                revolution</button>
         </div>
         <div class="text-box-container">
-            <div id="text-box-connectoral-1" class="clickthrough-text-box hidden">
+            <div id="text-box-lax-1" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
                     <p>The upper levels of the garage support vertical farms that have different types of plants for
                         both carbon capture, food, and aesthetics. With a filtration system of the airport’s gray water,
@@ -255,20 +262,22 @@
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
-            <div id="text-box-connectoral-2" class="clickthrough-text-box hidden">
+            <div id="text-box-lax-2" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
                     <p>The lower levels of the garage were transitioned earlier on into a sort of decarbonized mobility
-                        hub to support the movement of large amounts of people through the airport. There people can
-                        find access to many of the airport’s transport methods and they are connected to a large
-                        majority of the terminals by way of the modular transit pods, hydrogen bikes with luggage
+                        hub to support the movement of large amounts of people through the airport. There, people can
+                        find access to many of the airport’s transport methods and are connected to a large
+                        majority of the terminals; by way of the modular transit pods, hydrogen bikes with luggage
                         compartments, and train connections.</p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
-            <div id="text-box-connectoral-3" class="clickthrough-text-box hidden">
+            <div id="text-box-lax-3" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>To improve the infamous heavy traffic of the Loop in LAX, a modular transit pod system was added
-                        to decrease the amount of cars on the surface, as a joint effort in the re-planning of the
+                    <p>To improve the infamous heavy traffic of the Loop in the old LAX, a modular transit pod system
+                        was added
+                        to decrease the amount of cars on surface streets. It was a joint effort in the re-planning of
+                        the
                         entire airport to improve transport flow and update the developing technology in the aviation
                         industry.</p>
                     <button class="close-text-box">Close</button>
@@ -283,14 +292,16 @@
             <button class="tiny-button" id="btn-santamonicapier-2" style="top: 75%; left: 10%;">⊙</button>
             <button class="tiny-button" id="btn-santamonicapier-3" style="top: 30%; left: 75%;">⊙</button>
             <button class="tiny-button" id="btn-santamonicapier-4" style="top: 80%; left: 90%;">⊙</button>
-            <button class="tiny-button hold-button" id="hold-santamonicapier" style="top: 93%; left: 95%;">⤺</button>
+            <button class="tiny-button hold-button" id="hold-santamonicapier"
+                style="top: 93%; left: 85%; font-size: 20px; animation: oscillate 3s infinite ease-in-out;">before the
+                revolution</button>
         </div>
     </div>
     <div class="text-box-container">
         <div id="text-box-santamonicapier-1" class="clickthrough-text-box hidden">
             <div class="text-box-content">
                 <p>Specialized research domes continuously monitor chemical levels in the water, track the health of
-                    local marine life, and rehabilitate certain animals for re-release. Periodically hosting tourist
+                    local marine life, and rehabilitate marine animals for re-release. Periodically hosting tourist
                     groups for sightseeing and education sessions, they ensure their practice exists in harmony
                     within the ecosystem that it is situated upon. If any visitor or employee is seen littering, they’re
                     subjected to a pecking by the local
@@ -320,8 +331,8 @@
             <div class="text-box-content">
                 <p>The nearby beach was closed to tourism for many years due to safety hazards and unsafe
                     conditions. Together with the infrastructural change in LA County, more waterside plants found
-                    the peace and space to regrow along the coastline, and with it, the sand and beach area that was
-                    washing away with the rising ocean started a new era of reinforcement.</p>
+                    the peace and space to regrow along the coastline during the closure. With it, the sandy shoreline
+                    that was washing away with the rising ocean levels began a new era of recovery.</p>
                 <button class="close-text-box">Close</button>
             </div>
         </div>
@@ -333,7 +344,9 @@
             <button class="tiny-button" id="btn-thewalkoffame-1" style="top: 45%; left: 15%;">⊙</button>
             <button class="tiny-button" id="btn-thewalkoffame-2" style="top: 75%; left: 90%;">⊙</button>
             <button class="tiny-button" id="btn-thewalkoffame-3" style="top: 80%; left: 75%;">⊙</button>
-            <button class="tiny-button hold-button" id="hold-thewalkoffame" style="top: 93%; left: 95%;">⤺</button>
+            <button class="tiny-button hold-button" id="hold-thewalkoffame"
+                style="top: 93%; left: 85%; font-size: 20px; animation: oscillate 3s infinite ease-in-out;">before the
+                revolution</button>
         </div>
         <div class="text-box-container">
             <div id="text-box-thewalkoffame-1" class="clickthrough-text-box hidden">
@@ -348,7 +361,7 @@
                 <div class="text-box-content">
                     <p>Despite the persistence of old world ideals in other areas of Hollywood, one thing it could not
                         avoid was the permeation of public transport. Once again popular in certain areas was an updated
-                        version of the historic Red Cars of the trolley system. </p>
+                        version of the Red Cars of the trolley system in historic Los Angeles. </p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
@@ -369,13 +382,15 @@
             <button class="tiny-button" id="btn-newdowntown-1" style="top: 15%; left: 15%;">⊙</button>
             <button class="tiny-button" id="btn-newdowntown-2" style="top: 70%; left: 10%;">⊙</button>
             <button class="tiny-button" id="btn-newdowntown-3" style="top: 60%; left: 75%;">⊙</button>
-            <button class="tiny-button hold-button" id="hold-newdowntown" style="top: 93%; left: 95%;">⤺</button>
+            <button class="tiny-button hold-button" id="hold-newdowntown"
+                style="top: 93%; left: 85%; font-size: 20px; animation: oscillate 3s infinite ease-in-out;">before the
+                revolution</button>
         </div>
         <div class="text-box-container">
             <div id="text-box-newdowntown-1" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
                     <p>The synergistic effects of smog and the urban heat island effect were addressed in the earlier
-                        stages of the infrastructural shift, when rewilding and vertical greenery were paired with
+                        stages of the infrastructural shift when rewilding and vertical greenery were paired with
                         albedo enhanced surfaces in new builds of the downtown area.</p>
                     <button class="close-text-box">Close</button>
                 </div>
@@ -394,7 +409,7 @@
                     <p>Sensor and automation integration into infrastructure was a key assistance in managing such
                         complex and large swaths of metropolitan area. By collecting physical data across the city,
                         machines can optimize water flow, shading, ventilation, and other factors in real time to
-                        allocate resources where they need to go, and mitigate issues ahead of time.</p>
+                        allocate resources where they need to go, mitigating issues ahead of time.</p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
@@ -406,7 +421,9 @@
             <button class="tiny-button" id="btn-oneten-1" style="top: 15%; left: 15%;">⊙</button>
             <button class="tiny-button" id="btn-oneten-2" style="top: 65%; left: 50%;">⊙</button>
             <button class="tiny-button" id="btn-oneten-3" style="top: 80%; left: 80%;">⊙</button>
-            <button class="tiny-button hold-button" id="hold-oneten" style="top: 93%; left: 95%;">⤺</button>
+            <button class="tiny-button hold-button" id="hold-oneten"
+                style="top: 93%; left: 85%; font-size: 20px; animation: oscillate 3s infinite ease-in-out;">before the
+                revolution</button>
         </div>
         <div class="text-box-container">
             <div id="text-box-oneten-1" class="clickthrough-text-box hidden">
@@ -415,7 +432,7 @@
                         faced huge governmental backlash and pessimistic sentiment, with many believing it was not
                         remotely possible to see success of the project. But what was overlooked was the public’s
                         capacity to adapt to new lifestyles in the face of obvious dire need. After completion of the
-                        project, public usage of the greenways started slow, but eventually saw exponential increases of
+                        project, public usage of the greenways was slow, but eventually saw exponential increases of
                         appreciation and usage. </p>
                     <button class="close-text-box">Close</button>
                 </div>
@@ -434,7 +451,7 @@
             </div>
             <div id="text-box-oneten-3" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>These major freeways once divided neighborhoods that were historically communities of color. With
+                    <p>Major freeways once divided neighborhoods that were historically communities of color. With
                         conversion into a fusion of public transport and linear parks, Los Angeles saw a healing that
                         was not expected; the divisions almost became a stitch back together of the fragmented
                         communities. Hosting food stalls, pop up shops, and community gatherings, and more, a space that
@@ -452,12 +469,14 @@
             <button class="tiny-button" id="btn-riodeangeles-2" style="top: 70%; left: 40%;">⊙</button>
             <button class="tiny-button" id="btn-riodeangeles-3" style="top: 20%; left: 90%;">⊙</button>
             <button class="tiny-button" id="btn-riodeangeles-4" style="top: 70%; left: 80%;">⊙</button>
-            <button class="tiny-button hold-button" id="hold-riodeangeles" style="top: 93%; left: 95%;">⤺</button>
+            <button class="tiny-button hold-button" id="hold-riodeangeles"
+                style="top: 93%; left: 85%; font-size: 20px; animation: oscillate 3s infinite ease-in-out;">before the
+                revolution</button>
         </div>
         <div class="text-box-container">
             <div id="text-box-riodeangeles-1" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>The LA River was originally concreted to address flooding issues. With the more broad re-greening
+                    <p>The LA River was originally concreted to address flooding issues. With the broad re-greening
                         of LA in the Solar Revolution, the reestablishment of surrounding wetlands and riparian zones
                         addressed this problem and absorbed excess water during peak flow times. Local flora was spread
                         across the stretch of the river to work together with LA’s natural climate. This goes in tandem
@@ -469,15 +488,15 @@
             <div id="text-box-riodeangeles-2" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
                     <p>The previously endangered SoCal Steelhead trout’s population saw a fantastic recovery as the
-                        river re-wilding project took place, and its population is now back to a healthy level. </p>
+                        river re-wilding project took place, and its population came back to a healthy level. </p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
             <div id="text-box-riodeangeles-3" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
                     <p>Along the river residents can utilize various walking trails to view the revitalized river
-                        ecosystem and breath a breath of calm in the midst of a busy day. Local wildflowers grace some
-                        patches of brush, like the California Poppies or Golden yarrow.</p>
+                        ecosystem and take a breath of calm in the midst of a busy day. Local wildflowers grace some
+                        patches of brush, like California Poppies or Golden yarrow.</p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
@@ -519,7 +538,7 @@
                 depth: 'DMimgs/laxparkingDM.png'
             },
             {
-                image: 'solarimgs/PALISADES.jpg',
+                image: 'solarimgs/palisades1.jpg',
                 depth: 'DMimgs/palisadesDM.png'
             },
             {
@@ -609,33 +628,33 @@
 
         const locationIntroTexts = {
             'newdowntown': [
-                "The skyline of Los Angeles that once boasted the typical towering glass buildings of many cities around the country, eventually underwent a re-greening.",
-                "Both in public green space and vertical gardening, a huge effort took place to increase plant cover. With a combination of that, along with decreased Co2 emissions and consistence maintenance, the urban heat island phenomenon was reduced and smog was mitigated."
+                "The skyline of Los Angeles that once boasted the typical towering glass buildings of many cities around the world, eventually underwent a re-greening.",
+                "Both with public green space and vertical gardening, a huge effort took place to increase plant cover. A combination of the two, along with decreased Co2 emissions and consistent public maintenance, mitigated the urban heat island phenomenon and amount of smog that was so common in the city."
             ],
             'oneten': [
                 "The traffic of Los Angeles was a constant sore spot with locals and tourists alike.",
-                "The infamous 405, 110, and another freeways took hours upon hours out of people’s days just from sitting in traffic in their vehicles.",
+                "The infamous 405, 110, and other freeways took hours upon hours out of people’s days just from sitting in traffic in their vehicles.",
                 "Major highways were gradually converted into newly developed sections of light rail and long stretches of pedestrian greenways where people were free to walk, bike, or skate safely for miles and miles."
             ],
             'riodeangeles': [
                 "The Los Angeles River in the early 21st century was no more than a trickle of water in a concrete basin. Truly a sad sight to see, one could hardly call it a river, and it was devoid of life.",
                 "It took decades upon decades to revitalize and restore the river, not only to what it was before, but better than what could be imagined. "
             ],
-            'Connectoral': [
+            'lax': [
                 "As a city so intensely centered around cars, when the infrastructural and lifestyle shift took place in Los Angeles, there were many structures such as parking garages that suddenly had no purpose.",
                 "This structure, situated in LAX International Airport, was one of the many conversions that took place to use the existing building and space in a repurposed way. "
             ],
-            'Palisadian': [
+            'palisades': [
                 "The Pacific Palisades, after the devastating fires of 2025, had a long journey ahead to repair their community.",
                 "Certain areas were presented with the unique opportunity of the first testing communities of a more circular way of life, and accepted the challenge. ",
                 "Here lies the first neighborhoods that kickstarted the venture into the solar philosophy."
             ],
             'santamonicapier': [
-                "Santa Monica Pier was left in ruins after a catastrophic storm in the 30's.",
-                "The rebuilt pier found a way to honor the history while serving a new purpose of coastline research and public education. "
+                "Santa Monica Pier was left in ruins after a catastrophic storm in the 30's, part of the series of extreme weather events following continuous lack of change.",
+                "The rebuilt pier found a way to honor the history of the area while serving a new purpose of coastline marine life research and public education. "
             ],
             'thewalkoffame': [
-                "The Walk of Fame lasted through the Solar Revolution, battling the drive towards sustainability with the strength of the entertainment industry.",
+                "The Walk of Fame resisted change through the Solar Revolution, battling the drive towards sustainability with the strength of the entertainment industry.",
                 " As a widespread shift of public priorities took place in the midst of intense climate disasters, Hollywood struggled, but the worship of celebrities and public figures never quite ceased;",
                 "It still stands as a symbol of the early 21st century, and a reminder of persisting consumerist tendencies within people."
             ]
