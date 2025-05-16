@@ -5,6 +5,20 @@ let particles = [];
 
 function preload() {
     img = loadImage('solarimgs/earth.png'); // earth image
+
+    clickSound = [
+        loadSound('sound/click2.mp3'),
+        loadSound('sound/click3.mp3'),
+        loadSound('sound/click4.mp3')
+    ];
+
+}
+
+function playRandomSound() {
+    if (clickSound.length > 0) {
+        const randomIndex = Math.floor(Math.random() * clickSound.length);
+        clickSound[randomIndex].play();
+    }
 }
 
 function setup() {
@@ -79,6 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsContainer.style.display = "block"; // Display the results container
         pollContainer.style.display = "none"; // Hide poll buttons
 
+
+        // Disable the external link during loading
+        const externalLink = document.getElementById("external-link");
+        externalLink.style.pointerEvents = "none"; // Disable clicks
+        externalLink.style.opacity = "0.0"; // Dim the link to indicate it's disabled
+
         async function updateVote(option) {
             const docSnap = await window.firebaseUtils.getDoc(pollDocRef);
             let data = { yes: 0, no: 0 }; // Default in case doc doesn't exist yet
@@ -122,6 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsContainer.style.display = "block"; // Show results
         restartLink.style.display = "block"; // Show the Restart Story link
 
+        const externalLink = document.getElementById("external-link");
+        externalLink.style.pointerEvents = "auto"; // Enable clicks
+        externalLink.style.opacity = "1"; // Restore full opacity
     }
 
     function handleVote(option) {
@@ -132,22 +155,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
         showLoading();
 
-        updateVote(option)
-            .then((data) => showResults(data))
-            .catch((error) => {
-                console.error("Error updating vote:", error);
-                resultsText.textContent = "An error occurred. Please try again.";
-                spinner.style.display = "none"; // Hide spinner in case of error
-            });
+        const sound = playRandomSound(); // Play a random sound
+        if (sound) {
+            sound.onended = () => {
+                updateVote(option)
+                    .then((data) => showResults(data))
+                    .catch((error) => {
+                        console.error("Error updating vote:", error);
+                        resultsText.textContent = "An error occurred. Please try again.";
+                        spinner.style.display = "none"; // Hide spinner in case of error
+                    });
+            };
+        } else {
+            updateVote(option)
+                .then((data) => showResults(data))
+                .catch((error) => {
+                    console.error("Error updating vote:", error);
+                    resultsText.textContent = "An error occurred. Please try again.";
+                    spinner.style.display = "none"; // Hide spinner in case of error
+                });
+        }
     }
 
     yesButton.addEventListener("click", () => handleVote("yes"));
     noButton.addEventListener("click", () => handleVote("no"));
 
     conclusionText.addEventListener("click", () => {
-        conclusionText.textContent = "Is such a world possible?";
-        conclusionText.style.cursor = "default";
-        pollContainer.style.display = "block";
-
+        const sound = playRandomSound(); // Play a random sound
+        if (sound) {
+            sound.onended = () => {
+                conclusionText.textContent = "Is such a world possible?";
+                conclusionText.style.cursor = "default";
+                pollContainer.style.display = "block";
+            };
+        } else {
+            conclusionText.textContent = "Is such a world possible?";
+            conclusionText.style.cursor = "default";
+            pollContainer.style.display = "block";
+        }
     });
 });

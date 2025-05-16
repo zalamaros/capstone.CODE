@@ -4,20 +4,29 @@ let exploreButton;
 let particles = [];
 let fontGraphics;
 let word1 = "los angeles"; // line 1
-let word2 = "solar"; // second line
+let word2 = "solar"; // line 2
 let fontSize = 225;
 let myFont;
+let click1;
+let ambienceIntro;
 
 function preload() {
     myFont = loadFont('misc/Azedo-Bold.otf');
+    click1 = loadSound('sound/click1.mp3');
+    ambienceIntro = loadSound('tracks/introvarb.mp3');
 }
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
     textAlign(CENTER, CENTER);
     textSize(32);
     noStroke();
 
-    // Initialize particle text
+    if (ambienceIntro) {
+        ambienceIntro.setVolume(0.5); // Set volume (adjust as needed)
+        ambienceIntro.loop(); // Play the music in a loop
+    }
+
     fontGraphics = createGraphics(1500, height);
     fontGraphics.pixelDensity(1);
     fontGraphics.background(0);
@@ -26,14 +35,14 @@ function setup() {
     fontGraphics.textSize(fontSize);
     fontGraphics.fill(255);
 
-    // first line with adjusted spacing
+    // first line + adjusted spacing
     let firstLineY = height / 2 - fontSize / 3;
     let firstLineX = 750 - (word1.length * fontSize * 0.25); // positioning
     for (let i = 0; i < word1.length; i++) {
         fontGraphics.text(word1[i], firstLineX + (i * fontSize * 0.43), firstLineY);
     }
 
-    // second line with adjusted spacing
+    // second line + adjusted spacing
     let secondLineY = height / 2 + fontSize / 3.8;
     let secondLineX = 750 - (word2.length * fontSize * 0.12); //positioning
     for (let i = 0; i < word2.length; i++) {
@@ -52,12 +61,15 @@ function setup() {
         }
     }
 
-    // enter button (title screen)
+    // Nav to map
     exploreButton = createButton("explore");
     exploreButton.id('start-button');
     exploreButton.style('font-family', 'Azedo-Bold');
     exploreButton.mousePressed(() => {
-        window.location.href = "solarMAP.html";
+        click1.play();
+        click1.onended(() => {
+            window.location.href = "solarMAP.html"; // finish nav after clickie sound is done
+        });
     });
     exploreButton.position(width * 0.8, height / 2);
 
@@ -71,21 +83,17 @@ function draw() {
 
     if (showTitle) {
         background(r, g, b);
-
         for (let p of particles) {
             p.update();
         }
-
         for (let p of particles) {
             p.showCore();
         }
-
         blendMode(BLEND);
     } else {
         background(0);
     }
 }
-
 
 class Particle {
     constructor(x, y) {
@@ -93,7 +101,6 @@ class Particle {
         this.pos = createVector(x + random(-50, 50), y + random(-50, 50));
         this.vel = createVector();
         this.acc = createVector();
-        // this.colorShift = random(1000);
         this.wiggleOffset = random(1000);
         this.dia = random(1, 2.5);
     }

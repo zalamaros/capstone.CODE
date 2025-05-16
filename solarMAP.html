@@ -19,8 +19,6 @@
 
     </div>
 
-
-
     <script src="map.js"></script>
 
     <a href="conclusion.html" id="conclusion-button">Conclusion</a>
@@ -42,6 +40,28 @@
             <a href="solarVISUAL.html?set=6&location=thewalkoffame" class="map-button" style="top: 33%; left: 65%;">The
                 Walk of Fame</a>
         </div>
+    </div>
+
+    <script>
+        // Preload the sound effect
+        const clickSound = new Audio('sound/click1.mp3'); // Replace with your desired sound file
+
+        // Add event listeners to all buttons with the class "map-button"
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".map-button");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent immediate navigation
+                    const targetUrl = button.href; // Get the target URL
+                    clickSound.play();
+                    clickSound.onended = () => {
+                        window.location.href = targetUrl;
+                    };
+                });
+            });
+        });
+    </script>
 
 </body>
 

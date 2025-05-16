@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>EXPLORE MY WORLD</title>
 
-    <!-- styling within the page because idk why i tried to move it to a seperate page and it totally srewed things up -->
+    <!-- Styling within the page -- IDK why when tried to move it to a seperate page it totally srewed things up -->
     <style>
         html,
         body {
@@ -46,7 +46,7 @@
             justify-content: center;
             text-decoration: none;
             color: white;
-            font-size: 24px;
+            font-size: 40px;
             font-weight: bold;
             transition: all 0.3s ease;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -209,30 +209,29 @@
                 <div class="text-box-content">
                     <p>Small communities hold tight knit families and residents that have small personal gardens, with
                         homes that blend into the hills of grass. They are surrounded by fire resistant plants, and have
-                        especially effective systems of both ventilation and insulation for their homes to optimize
-                        energy usage.</p>
+                        systems of ventilation and insulation that adjust to the outside temperatures.</p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
             <div id="text-box-palisades-2" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>In an energy grid reformatted to be reliant by renewable energy, Los Angeles Solar has a
-                        particular persistence of transmission towers to ensure the transport of many different forms of
+                    <p>In an energy grid reformatted to be reliant on renewable energy, Los Angeles Solar has a
+                        particular persistence of transmission towers to ensure the transport of tens of forms of
                         renewable energy across a large city. </p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
             <div id="text-box-palisades-3" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>With solar panels and other means of generating sustainable energy connected to every home,
-                        people can generate their own electricity needs, and not rely on faraway sources with
-                        invisible systems.</p>
+                    <p>Solar panels now have a 50% efficiency rate, angle themselves to the optimum position to receive
+                        the most energy based on the sun's position in the sky, and even can receive considerable energy
+                        from moonlight.</p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
             <div id="text-box-palisades-4" class="clickthrough-text-box hidden">
                 <div class="text-box-content">
-                    <p>The New palisades was a community born from tragedy, and quite experimental, thus learning
+                    <p>The New Palisades was a community born from tragedy, and quite experimental, thus learning
                         through action.
                         They continued to receive support from the rest of LA, and afterwards helped
                         other communities to make the sustainable transition - this was a landmark occurence of unity
@@ -258,7 +257,7 @@
                     <p>The upper levels of the garage support vertical farms that have different types of plants for
                         both carbon capture, food, and aesthetics. With a filtration system of the airport’s gray water,
                         and support from the new energy grid, the setup contributes to the goal of a more circular
-                        airport.</p>
+                        airport. </p>
                     <button class="close-text-box">Close</button>
                 </div>
             </div>
@@ -320,10 +319,11 @@
         </div>
         <div id="text-box-santamonicapier-3" class="clickthrough-text-box hidden">
             <div class="text-box-content">
-                <p>Two ferris wheels were constructed in a nod to the Pier’s past amusement park attractions.
-                    Visitors can step into a glass pod and power their pod by a combination of solar energy, and
-                    their own step energy from sensors inside the pod. As the pod glides through the torus, they can
-                    enjoy even taller views than the previous ferris wheel.</p>
+                <p>Two ferris wheels were constructed in a nod to the Pier’s past amusement park attractions, but were
+                    actually a significant step forward in the safe use of nuclear fusion energy -- the tourists that
+                    glide through the torus in their own glass pods are fully powered by solely fusion energy, as one of
+                    the first commercial
+                    attractions that utilized such technology.</p>
                 <button class="close-text-box">Close</button>
             </div>
         </div>
@@ -772,8 +772,37 @@
                 stillImage.style.display = "none";
             });
 
+            // Map locations to audio files
+            const locationAudioMap = {
+                'newdowntown': 'tracks/newdowntown.mp3',
+                'oneten': 'tracks/oneten.mp3',
+                'riodeangeles': 'tracks/riodeangeles.mp3',
+                'lax': 'tracks/lax.mp3',
+                'palisades': 'tracks/palisades.mp3',
+                'santamonicapier': 'tracks/santamonicapier.mp3',
+                'thewalkoffame': 'tracks/thewalkoffame.mp3'
+            };
+
+            // Get the file for location
+            const audioFile = locationAudioMap[location.toLowerCase()];
+            if (!audioFile) return; // Exit if none
+
+            // Create audio element
+            const audio = new Audio(audioFile);
+            audio.loop = true; // Loop
+            audio.volume = 0.5; // Set initial volume
+            audio.play().catch(error => {
+                console.error("Error playing audio:", error);
+            });
+
+            // Stop when leaving page
+            window.addEventListener("beforeunload", () => {
+                audio.pause();
+                audio.currentTime = 0; // Reset audio
+            });
 
         });
+
     </script>
 
 </body>

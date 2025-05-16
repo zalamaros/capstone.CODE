@@ -1,8 +1,28 @@
 let img;
 let particles = [];
+let clickSound = [];
+let ambienceMap;
 
 function preload() {
-  img = loadImage('solarimgs/LAtopography.jpg'); // Grayscale topographic map of LA
+  img = loadImage('solarimgs/LAtopography.jpg');
+
+  clickSound = [
+    loadSound('sound/click1.mp3'),
+    loadSound('sound/click2.mp3'),
+    loadSound('sound/click3.mp3'),
+    loadSound('sound/click4.mp3'),
+    loadSound('sound/click5.mp3'),
+    loadSound('sound/click6.mp3'),
+  ];
+
+  ambienceMap = loadSound('tracks/mapvarb.mp3');
+}
+
+function playRandomSound() {
+  if (clickSound.length > 0) {
+    const randomIndex = Math.floor(Math.random() * clickSound.length);
+    clickSound[randomIndex].play();
+  }
 }
 
 function setup() {
@@ -11,6 +31,7 @@ function setup() {
   image(img, 0, 0, windowWidth, windowHeight);
   img.resize(windowWidth, windowHeight); // resize image to match canvas
   img.loadPixels();
+
 
   for (let y = 0; y < img.height; y += 5) {
     for (let x = 0; x < img.width; x += 5) {
@@ -32,7 +53,13 @@ function setup() {
     }
   }
 
+  if (ambienceMap) {
+    ambienceMap.setVolume(0.5); // Set volume (adjust as needed)
+    ambienceMap.loop(); // Play the music in a loop
+  }
+
 }
+
 
 function draw() {
 
@@ -44,7 +71,6 @@ function draw() {
 
 
   for (let p of particles) {
-    // Optional dynamic offset based on mouse position
     let dx = map(mouseX, 0, width, -9, 9) * p.elevation;
     let dy = map(mouseY, 0, height, -9, 9) * p.elevation;
 
@@ -69,19 +95,43 @@ let textIndex = 0;
 const overlay = document.getElementById("intro-overlay");
 const introText = document.getElementById("intro-text");
 
-// Check if the previous page was intro.html using the referrer
+// Check if previous page was intro.html (so introTexts does not play unnecessarily)
 if (document.referrer && document.referrer.includes("intro.html")) {
   introText.textContent = introTexts[textIndex];
 
   overlay.addEventListener("click", () => {
     textIndex++;
     if (textIndex < introTexts.length) {
+      playRandomSound();
       introText.textContent = introTexts[textIndex];
     } else {
-      overlay.style.display = "none"; // Hide the overlay after the intro
+      playRandomSound();
+      overlay.style.display = "none"; // Hide text after done
     }
   });
 } else {
-  // If not coming from intro.html, hide the intro overlay immediately
+  // hide intro if not coming from intro.html
   overlay.style.display = "none";
 }
+
+
+// Click sounds for location buttons
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".map-button, #conclusion-button");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent immediate nav
+      const targetUrl = button.href;
+
+      const sound = playRandomSound();
+      if (sound) {
+        sound.onended = () => {
+          window.location.href = targetUrl; // Nav after the sound finishes
+        };
+      } else {
+        window.location.href = targetUrl;
+      }
+    });
+  });
+});
