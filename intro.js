@@ -1,6 +1,5 @@
 let showTitle = true;
 let exploreButton;
-
 let particles = [];
 let fontGraphics;
 let word1 = "los angeles"; // line 1
@@ -11,7 +10,7 @@ let click1;
 let ambienceIntro;
 
 function preload() {
-    myFont = loadFont('misc/Azedo-Bold.otf');
+    myFont = loadFont('fonts/Azedo-Bold.otf');
     click1 = loadSound('sound/click1.mp3');
     ambienceIntro = loadSound('tracks/introvarb.mp3');
 }
@@ -23,8 +22,8 @@ function setup() {
     noStroke();
 
     if (ambienceIntro) {
-        ambienceIntro.setVolume(0.5); // Set volume (adjust as needed)
-        ambienceIntro.loop(); // Play the music in a loop
+        ambienceIntro.setVolume(0.5);
+        ambienceIntro.loop();
     }
 
     fontGraphics = createGraphics(1500, height);

@@ -52,23 +52,19 @@ function setup() {
       }
     }
   }
-
   if (ambienceMap) {
-    ambienceMap.setVolume(0.5); // Set volume (adjust as needed)
-    ambienceMap.loop(); // Play the music in a loop
+    ambienceMap.setVolume(0.5);
+    ambienceMap.loop();
   }
 
 }
 
-
 function draw() {
-
   //background(232, 252, 255);
   background(13, 94, 78);
   noStroke();
   //fill(0, 102, 0, 100);
   fill(178, 255, 102, 255);
-
 
   for (let p of particles) {
     let dx = map(mouseX, 0, width, -9, 9) * p.elevation;
@@ -76,8 +72,6 @@ function draw() {
 
     ellipse(p.baseX + dx, p.baseY + dy, p.size, p.size);
   }
-
-
 }
 
 const introTexts = [
@@ -95,7 +89,7 @@ let textIndex = 0;
 const overlay = document.getElementById("intro-overlay");
 const introText = document.getElementById("intro-text");
 
-// Check if previous page was intro.html (so introTexts does not play unnecessarily)
+// CHECK if previous page was intro.html (so introTexts does not play unnecessarily)
 if (document.referrer && document.referrer.includes("intro.html")) {
   introText.textContent = introTexts[textIndex];
 

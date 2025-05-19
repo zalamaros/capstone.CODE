@@ -5,7 +5,6 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    /* Ensure the body is positioned */
 }
 
 canvas {
@@ -18,12 +17,12 @@ canvas {
 
 @font-face {
     font-family: 'Azedo-Bold';
-    src: url('misc/Azedo-Bold.otf');
+    src: url('fonts/Azedo-Bold.otf');
 }
 
 @font-face {
     font-family: 'EurostileBold';
-    src: url('misc/EurostileBold.ttf');
+    src: url('fonts/EurostileBold.ttf');
 }
 
 /* TITLE SCREEN */
@@ -116,8 +115,7 @@ canvas {
 }
 
 
-/* Button */
-
+/* buttons */
 button {
     padding: 10px 20px;
     border: none;
@@ -135,10 +133,7 @@ button:hover {
     transform: scale(1.15);
 }
 
-
-
 /* CONCLUSION STUFF */
-
 #conclusion-container {
     position: absolute;
     left: 50%;
@@ -160,7 +155,6 @@ h1:hover {
     transition: transform 0.3s ease;
     transform: scale(1.1);
 }
-
 
 #poll-container {
     position: fixed;
@@ -186,7 +180,6 @@ h1:hover {
     transition: background-color 0.3s ease;
 }
 
-
 #results-container {
     font-family: 'EurostileBold';
 }
@@ -196,7 +189,7 @@ h1:hover {
     flex-direction: row;
     justify-content: center;
     gap: 300px;
-    /* space between Yes and No blocks */
+    /* space between yes / no blocks */
 }
 
 .poll-result-item {

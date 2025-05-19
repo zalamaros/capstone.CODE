@@ -6,13 +6,10 @@
     <title>WHAT NOW?</title>
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
+        // Backend ... with Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
 
         const firebaseConfig = {
             apiKey: "AIzaSyAkWljZdlbxSPfIFOGgJOnRyporL1-NqTo",
@@ -24,14 +21,12 @@
             measurementId: "G-SHTHDLHYC4"
         };
 
-        // Initialize Firebase
+        // initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-
-        // Initialize Firestore
+        // initialize Firestore
         const db = getFirestore(app);
-
-        // Expose to global scope
+        // global scope
         window.firebaseUtils = {
             db,
             doc,
@@ -42,10 +37,8 @@
 
     </script>
 
-
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.min.js"></script>
-
 
     <link rel="stylesheet" href="solar.css">
 
@@ -54,20 +47,23 @@
 <body>
 
     <div id="conclusion-container">
-        <h1 id="conclusion-text">Traveler #00<br>We have a final question for you</h1>
+        <h1 id="conclusion-text">Traveler.<br>Our city relies not just on technology,<br>or
+            advanced
+            infrastructure,<br>but on the belief in a life<br>where we know that there is no seperation<br>between
+            humans and nature.<br>We are one in the same;<br>and act with love.<br>For the Earth,<br>and all beings that
+            occupy it.</h1>
         <div id="poll-container" style="display: none;">
             <button id="yes-button">Yes</button> <button id="no-button">No</button>
         </div>
         <div id="results-container" style="display: none;">
-
             <div id="loading-spinner" style="display: none;"></div>
+            <p id="loading-text" style="display: none;">What would your city look like in the eco future?</p>
             <p id="results-text"></p>
             <a id="external-link" href="https://example.com" target="_blank">CONTINUE THE CONVERSATION</a>
             <a href="intro.html" id="restart" style="display: none;">Restart Story</a>
 
         </div>
     </div>
-
 
     <script src="conclusion.js"></script>
 

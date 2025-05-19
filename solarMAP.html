@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>MAP DE LA SOLAR</title>
+    <title>MAP DE SOLAR</title>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.min.js"></script>
@@ -20,11 +20,9 @@
     </div>
 
     <script src="map.js"></script>
-
     <a href="conclusion.html" id="conclusion-button">Conclusion</a>
 
     <div id="canvas-container">
-
         <div class="button-map">
             <a href="solarVISUAL.html?set=0&location=newdowntown" class="map-button" style="top: 30%; left: 60%;">New
                 Downtown</a>
@@ -43,13 +41,8 @@
     </div>
 
     <script>
-        // Preload the sound effect
-        const clickSound = new Audio('sound/click1.mp3'); // Replace with your desired sound file
-
-        // Add event listeners to all buttons with the class "map-button"
         document.addEventListener("DOMContentLoaded", () => {
-            const buttons = document.querySelectorAll(".map-button");
-
+            const buttons = document.querySelectorAll(".map-button, #conclusion-button");
             buttons.forEach(button => {
                 button.addEventListener("click", (event) => {
                     event.preventDefault(); // Prevent immediate navigation
