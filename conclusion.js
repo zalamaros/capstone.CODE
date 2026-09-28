@@ -99,9 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsContainer.style.display = "block"; // display results container
         pollContainer.style.display = "none"; // hide poll buttons
 
-        const externalLink = document.getElementById("external-link");
-        externalLink.style.pointerEvents = "none"; // Disable link & clicks
-        externalLink.style.opacity = "0.0";
+        //const externalLink = document.getElementById("external-link");
+        // externalLink.style.pointerEvents = "none"; // Disable link & clicks
+        // externalLink.style.opacity = "0.0";
     };
 
 
@@ -128,9 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
         resultsContainer.style.display = "block";
         restartLink.style.display = "block";
 
-        const externalLink = document.getElementById("external-link");
-        externalLink.style.pointerEvents = "auto"; // enable link again
-        externalLink.style.opacity = "1";
+        //const externalLink = document.getElementById("external-link");
+        //externalLink.style.pointerEvents = "auto"; // enable link again
+        //externalLink.style.opacity = "1";
     }
 
     function handleVote(option) {
