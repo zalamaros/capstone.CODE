@@ -4,7 +4,9 @@ This is an immersive storytelling website exploring popular LA Locations set
 in a climate positive, solarpunk future. Built as an undergrad thesis + capstone project. 
 
 Live site🔗: https://zalamaros.github.io/capstone.CODE/intro.html
+
 Thesis paper🔗: https://acrobat.adobe.com/id/urn:aaid:sc:us:5f764e85-6f70-40c0-bc2c-ccac5966462c
+
 Portfolio study🔗: https://www.zokal.earth/la-solar/
 
 ** Please view on desktop. Mute volume if needed. 
